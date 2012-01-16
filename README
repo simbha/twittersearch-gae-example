@@ -1,0 +1,22 @@
+# README #
+
+This is trivial example Twitter Search App built on Google App Engine.
+
+Use for demonstration purposes only.
+
+# Install #
+
+You need to have Google App Engine for Python installed and added to system
+$PATH.
+
+For more information see here:
+http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python
+
+
+# Deploy # 
+
+Modify app.yaml to configure you own GAE Account Application ID and other
+params before deploying.
+
+
+

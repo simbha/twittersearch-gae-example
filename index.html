@@ -1,0 +1,47 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/css/main.css" />
+  <title>Twitter Search</title>
+</head>
+<body>
+<div id="header"><h1>Twitter Search</h1></div>
+
+<div id="search">
+  <form method="get" action="/">
+  Search Twitter: <input type="text" name="q" value="{{ query }}" /> <input type="submit" value="Search!" />
+  </form>
+</div><!-- /search -->
+
+{% if message %}
+<div id="message">Error message: {{ message }}</div>
+{% endif %}
+
+<h2>Search results</h2>
+<div id="searchresults">
+{% if results %}
+  {% for r in results %}
+    <a href="http://twitter.com/{{ r.from_user }}" target="_blank">
+      <img style="float:right" src="{{ r.profile_image_url }}" />
+    </a>
+    <a href="http://twitter.com/{{ r.from_user }}" target="_blank">{{ r.from_user_name }}</a>
+    <p>{{ r.text }}</p>
+    <small>created at: {{ r.created_at }}</small>
+  <hr style="clear:both" />  
+  {% endfor %}
+{% else %}
+  <em>Sorry, no results...</em>
+{% endif%}
+</div>
+
+<div id="stats">
+<h2>Recent searches...</h2>
+<table>
+<tr><th>Query</th><th># searches</th><th>avg # authors per 100 results</th></tr>
+{% for s in resultsAverages %}
+<tr><td>{{ s.query }}</td><td>{{ s.hits }}</td><td>{{ s.users_average|round(2) }}</td></tr>
+{% endfor %}
+</table>
+</div>
+
+</body>
+</html>

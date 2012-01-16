@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  background-color: #C0DEED;
+}
+
+div {
+  margin: 1em;
+  padding: 0.2em;
+  border: 1px dotted gray;
+}
+
+div#searchresults {
+  width: 50%;
+  float: left;
+}
+
+div#stats {
+  width: 40%;
+  float: left;
+}
+
+div#message {
+  border-color: red;
+}
+
+table td {
+  border: 1px solid gray;
+  text-align: right;
+}
+
+
